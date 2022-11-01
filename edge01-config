@@ -6,6 +6,11 @@ set firewall name DMZ-to-LAN rule 10 action 'accept'
 set firewall name DMZ-to-LAN rule 10 description 'Allow LAN access to DMZ' 
 set firewall name DMZ-to-LAN rule 10 destination port '1514 
 set firewall name DMZ-to-LAN rule 10 protocol 'udp' 
+set firewall name DMZ-to-LAN rule 20 action 'accept'
+set firewall name DMZ-to-LAN rule 20 description 'allow icmp from jump to log01'
+set firewall name DMZ-to-LAN rule 20 destination address '172.16.200.10'
+set firewall name DMZ-to-LAN rule 20 protocol 'icmp'
+set firewall name DMZ-to-LAN rule 20 source address '172.16.50.4'
 set firewall name DMZ-to-WAN default-action 'drop 
 set firewall name DMZ-to-WAN enable-default-log
 set firewall name DMZ-to-WAN rule 1 action 'accept' 
